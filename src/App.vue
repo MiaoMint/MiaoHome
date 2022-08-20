@@ -4,6 +4,7 @@ import IconBook from "./components/icons/IconBook.vue";
 import IconGithub from "./components/icons/IconGithub.vue";
 import IconTwitter from "./components/icons/IconTwitter.vue";
 import IconHome from "./components/icons/IconHome.vue";
+import IconYoutube from "./components/icons/IconYoutube.vue";
 </script>
 
 <template>
@@ -18,7 +19,8 @@ import IconHome from "./components/icons/IconHome.vue";
       <p>👋 hi! 这里是MiaoMint的主页</p>
       <div class="icons">
         <a href="https://blog.ohman.top" target="_blank" title="Blog"><IconBook></IconBook></a>
-        <a href="https://github.com/miaomint" title="Github"><IconGithub></IconGithub></a>
+        <a href="https://github.com/miaomint" target="_blank" title="Github"><IconGithub></IconGithub></a>
+        <a href="https://www.youtube.com/channel/UCEDJlXVGVHClXL_ihWsAfKw" target="_blank" title="Youtube"><IconYoutube></IconYoutube></a>
         <!-- <a title="Twitter"><IconTwitter></IconTwitter></a> -->
       </div>
     </div>
@@ -37,12 +39,12 @@ import IconHome from "./components/icons/IconHome.vue";
           <span>GitHub</span>
         </div>
       </RouterLink>
-      <!-- <RouterLink to="/blog">
+      <RouterLink to="/blog">
         <div class="link">
           <IconBook> </IconBook>
           <span>Blog</span>
         </div>
-      </RouterLink> -->
+      </RouterLink>
     </nav>
     <main>
       <RouterView />
