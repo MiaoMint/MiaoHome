@@ -96,6 +96,7 @@ p {
 
 a {
   text-decoration: none;
+  color: unset;
 }
 
 a:focus {
@@ -103,7 +104,7 @@ a:focus {
 }
 
 a:hover {
-  color: #ff000094;
+  color: unset;
 }
 
 body {

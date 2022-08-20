@@ -4,7 +4,6 @@ import GithubCard from "../components/GithubCard.vue";
 
 <template>
   <div v-if="error">
-    <p>获取仓库列表失败</p>
     <p>{{ data }}</p>
   </div>
   <div v-else class="github-grid">
