@@ -1,6 +1,7 @@
 <template>
   <div class="card skeleton" v-if="skeleton">
     <div style="width: 90%"></div>
+    <div style="width: 70%"></div>
     <div style="width: 60%"></div>
     <div style="width: 70%"></div>
     <div class="icons">
@@ -12,7 +13,8 @@
     <h2>{{ repo }}</h2>
     <p>{{ desc }}</p>
     <div class="mb-2 tags">
-      <span class="tag mb-1" v-for="(v, k) in tags" :key="k">{{ v }}</span>
+      <span v-if="forked" class="tag mb-1 fork">forked</span>
+      <span class="tag mb-1" v-for="v in tags">{{ v }}</span>
     </div>
     <div class="icons">
       <div class="icon"><IconStar></IconStar> {{ starNum }}</div>
@@ -25,7 +27,7 @@
 import IconStar from "./icons/IconStar.vue";
 import Iconbranch from "./icons/Iconbranch.vue";
 export default {
-  props: ["tags", "repo", "desc", "starNum", "forkNum", "skeleton"],
+  props: ["tags", "repo", "desc", "starNum", "forkNum", "skeleton", "forked"],
   components: { IconStar, Iconbranch },
 };
 </script>
@@ -38,24 +40,7 @@ export default {
   transition: 0.2s ease;
   height: calc(100% - 40px);
 }
-.skeleton div {
-  height: 20px;
-  background-color: #e8e6e6;
-  background-image: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%);
-  background-position: 100% 50%;
-  background-size: 400% 100%;
-  margin-bottom: 8px;
-  animation: skeleton-loading 1.4s ease infinite;
-}
-@keyframes skeleton-loading {
-  0% {
-    background-position: 100% 50%;
-  }
 
-  100% {
-    background-position: 0 50%;
-  }
-}
 .skeleton .icons {
   display: flex;
   background-color: unset;
@@ -85,6 +70,11 @@ export default {
   font-size: 13px;
   display: inline-block;
 }
+.fork {
+  background-color: rgb(202 70 255 / 12%);
+  color: rgb(177 70 255);
+}
+
 .tags {
   word-break: break-all;
 }

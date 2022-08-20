@@ -19,6 +19,7 @@ import GithubCard from "../components/GithubCard.vue";
           :desc="v.description"
           :starNum="v.stargazers_count"
           :forkNum="v.forks_count"
+          :forked="v.fork"
         ></GithubCard>
       </a>
     </div>

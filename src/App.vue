@@ -16,7 +16,7 @@ import IconYoutube from "./components/icons/IconYoutube.vue";
     />
     <div class="info">
       <h1>MiaoMint</h1>
-      <p>👋 hi! 这里是MiaoMint的主页</p>
+      <p>👋 Hi! 这里是MiaoMint的主页</p>
       <div class="icons">
         <a href="https://blog.ohman.top" target="_blank" title="Blog"><IconBook></IconBook></a>
         <a href="https://github.com/miaomint" target="_blank" title="Github"><IconGithub></IconGithub></a>

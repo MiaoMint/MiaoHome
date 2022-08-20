@@ -126,3 +126,27 @@ body:before {
   max-width: 1024px;
   margin: auto;
 }
+
+.skeleton div {
+  height: 20px;
+  background-image: linear-gradient(121deg, #e3e3e3 25%, #dbdbdb 37%, #e2e2e2 63%);
+  background-position: 100% 50%;
+  background-size: 400% 100%;
+  margin-bottom: 8px;
+  animation: skeleton-loading 1.4s ease infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+img{
+  max-width: 100%;
+  border-radius: 10px;
+}

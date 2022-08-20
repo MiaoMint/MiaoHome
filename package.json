@@ -1,12 +1,13 @@
 {
   "name": "vue-navigation",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "markdown-it": "^13.0.1",
     "umi-request": "^1.4.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.3"
