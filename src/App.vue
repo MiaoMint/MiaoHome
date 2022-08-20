@@ -121,7 +121,6 @@ nav .link svg {
 }
 
 main {
-  background-color: #fff;
   width: 100%;
 }
 

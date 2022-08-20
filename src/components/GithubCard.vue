@@ -33,7 +33,7 @@ export default {
 <style scoped>
 .card {
   padding: 20px;
-  background-color: rgba(222, 222, 222, 0.499);
+  background-color: rgb(240 240 240);
   border-radius: 20px;
   transition: 0.2s ease;
   height: calc(100% - 40px);
