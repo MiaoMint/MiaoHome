@@ -145,6 +145,7 @@ main {
   }
   header {
     margin-bottom: 25px;
+    margin-top: 30px;
     flex-direction: column;
     text-align: center;
   }
