@@ -15,7 +15,7 @@
           {{ v.title }}
         </h2>
         <p>{{ v.description }}</p>
-        <p style="font-size: 14px;">{{ v.pubDate }}</p>
+        <p style="font-size: 14px">{{ v.pubDate }}</p>
       </a>
     </div>
   </div>
@@ -24,6 +24,7 @@
 <script>
 import x2js from "x2js";
 import request from "umi-request";
+import config from "../../config";
 
 export default {
   data() {
@@ -37,7 +38,7 @@ export default {
   mounted() {
     let xml2js = new x2js();
     request
-      .get("https://blog.ohman.top/feed/")
+      .get(config.BlogRss)
       .then((res) => {
         this.data = xml2js.xml2js(res).rss.channel.item;
         console.log(this.data);

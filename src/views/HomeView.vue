@@ -11,6 +11,7 @@
 <script>
 import MarkdownIt from "markdown-it";
 import request from "umi-request";
+import config from "../../config";
 export default {
   data() {
     return {
@@ -21,7 +22,15 @@ export default {
   mounted() {
     let md = new MarkdownIt().set({ html: true, breaks: true });
     request
-      .get("/home.md")
+      .get(
+        config.HomeMd == "Github"
+          ? "https://raw.githubusercontent.com/" +
+              config.GithubUsername +
+              "/" +
+              config.GithubUsername +
+              "/master/readme.md"
+          : config.HomeMd
+      )
       .then((res) => {
         this.data = md.render(res);
         this.loading = false;

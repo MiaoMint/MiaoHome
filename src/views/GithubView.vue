@@ -26,6 +26,7 @@ import GithubCard from "../components/GithubCard.vue";
 </template>
 <script>
 import request from "umi-request";
+import config from "../../config";
 export default {
   data() {
     return {
@@ -40,7 +41,9 @@ export default {
   methods: {
     getData() {
       request
-        .get("https://api.github.com/users/MiaoMint/repos?sort=pushed")
+        .get(
+          "https://api.github.com/users/" + config.GithubUsername + "/repos?sort=pushed"
+        )
         .then((res) => {
           this.data = res;
           this.loading = false;

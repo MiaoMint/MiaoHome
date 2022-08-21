@@ -1,3 +1,11 @@
 <template>
-  <h1>Hello World</h1>
+  <h1>HelloWorld</h1>
 </template>
+
+<script>
+export default {
+  mounted(){
+    console.log(this);
+  }
+};
+</script>

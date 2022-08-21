@@ -16,22 +16,34 @@ import IconVideo from "./components/icons/IconVideo.vue";
       alt="avatar"
     />
     <div class="info">
-      <h1>MiaoMint</h1>
-      <p>👋 Hi! 这里是MiaoMint的主页</p>
+      <h1>{{ config.Name }}</h1>
+      <p>{{ config.Desc }}</p>
       <div class="icons">
-        <a href="https://blog.ohman.top" target="_blank" title="Blog"
+        <a v-if="config.BlogUrl" :href="config.BlogUrl" target="_blank" title="Blog"
           ><IconBook></IconBook
         ></a>
-        <a href="https://github.com/miaomint" target="_blank" title="Github"
+        <a
+          v-if="config.GithubUsername"
+          :href="'https://github.com/' + config.GithubUsername"
+          target="_blank"
+          title="Github"
           ><IconGithub></IconGithub
         ></a>
         <a
-          href="https://www.youtube.com/channel/UCEDJlXVGVHClXL_ihWsAfKw"
+          v-if="config.YoutubeUrl"
+          :href="config.YoutubeUrl"
           target="_blank"
           title="Youtube"
           ><IconYoutube></IconYoutube
         ></a>
-        <!-- <a title="Twitter"><IconTwitter></IconTwitter></a> -->
+        <a
+          v-if="config.TwitterUrl"
+          :href="config.TwitterUrl"
+          target="_blank"
+          title="Twitter"
+        >
+          <IconTwitter></IconTwitter
+        ></a>
       </div>
     </div>
   </header>
@@ -43,19 +55,19 @@ import IconVideo from "./components/icons/IconVideo.vue";
           <span>Home</span>
         </div>
       </RouterLink>
-      <RouterLink to="/github">
+      <RouterLink v-if="config.GithubUsername" to="/github">
         <div class="link">
           <IconGithub> </IconGithub>
           <span>GitHub</span>
         </div>
       </RouterLink>
-      <RouterLink to="/blog">
+      <RouterLink v-if="config.BlogRss" to="/blog">
         <div class="link">
           <IconBook> </IconBook>
           <span>Blog</span>
         </div>
       </RouterLink>
-      <RouterLink to="/bangumi">
+      <RouterLink v-if="config.BilibiliUid" to="/bangumi">
         <div class="link">
           <IconVideo> </IconVideo>
           <span>Bangumi</span>
@@ -67,6 +79,10 @@ import IconVideo from "./components/icons/IconVideo.vue";
     </main>
   </div>
 </template>
+
+<script>
+import config from "../config";
+</script>
 
 <style scoped>
 .avatar {
