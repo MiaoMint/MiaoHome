@@ -1,9 +1,9 @@
 <template>
-  <div class="card m-2 skeleton" v-if="skeleton">
+  <div class="card skeleton" v-if="skeleton">
     <div class="img"></div>
     <div style="width: 70%"></div>
   </div>
-  <div v-else class="card m-2">
+  <div v-else class="card">
     <div>
       <img :src="cover" referrerpolicy="no-referrer" :alt="title" />
       <h3>{{ title }}</h3>
@@ -20,6 +20,7 @@ export default {
 <style scoped>
 .card {
   border-radius: 0 5px 0 5px;
+  margin: 16px;
 }
 
 .skeleton .img {
@@ -34,6 +35,9 @@ img {
 }
 
 @media (max-width: 1024px) {
+  .card {
+    margin: 8px;
+  }
   .skeleton .img {
     height: 200px;
   }

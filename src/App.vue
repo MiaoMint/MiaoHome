@@ -173,7 +173,7 @@ main {
   }
   header {
     margin-bottom: 25px;
-    margin-top: 50px;
+    margin-top: 20px;
     flex-direction: column;
     text-align: center;
   }

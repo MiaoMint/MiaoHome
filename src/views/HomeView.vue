@@ -1,5 +1,5 @@
 <template>
-  <div v-html="data"></div>
+  <div class="markdown" v-html="data"></div>
   <div v-if="loading" class="skeleton">
     <div style="width: 60%"></div>
     <div style="width: 90%"></div>
