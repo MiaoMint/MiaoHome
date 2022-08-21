@@ -7,7 +7,7 @@ const config = {
 
     GithubUsername: "MiaoMint",
 
-    BlogRss: "https://blog.ohman.top/feed",
+    BlogRss: "https://blog.ohman.top/feed/",
 
     BlogUrl: "https://blog.ohman.top",
 
