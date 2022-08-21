@@ -15,6 +15,9 @@ export default defineConfig({
     proxy: {
       '/bili': {
         target: 'https://api.bilibili.com',
+        headers:{
+          "referer":"https://space.bilibili.com/"
+        },
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/bili/, '')
       },

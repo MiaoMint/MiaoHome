@@ -11,10 +11,15 @@ module.exports = (req, res) => {
     createProxyMiddleware({
         target,
         changeOrigin: true,
+        headers:{
+            "referer":"https://space.bilibili.com/"
+        },
         pathRewrite: {
             // 通过路径重写，去除请求路径中的 `/backend`
             // 例如 /backend/user/login 将被转发到 http://backend-api.com/user/login
             '^/bili/': '/'
         }
-    })(req, res)
+    }
+    
+    )(req, res)
 }

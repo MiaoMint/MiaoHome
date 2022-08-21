@@ -26,7 +26,12 @@ export default {
       "/bili/x/space/bangumi/follow/list?type=1&pn=" +
         this.page +
         "&ps=15&vmid=" +
-        config.BilibiliUid
+        config.BilibiliUid,
+      {
+        headers:{
+          "referer":"https://www.bilibili.com/"
+        }
+      }
     )
       .then((res) => {
         this.data = res.data;
