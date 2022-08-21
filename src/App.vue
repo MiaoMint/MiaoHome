@@ -5,6 +5,7 @@ import IconGithub from "./components/icons/IconGithub.vue";
 import IconTwitter from "./components/icons/IconTwitter.vue";
 import IconHome from "./components/icons/IconHome.vue";
 import IconYoutube from "./components/icons/IconYoutube.vue";
+import IconVideo from "./components/icons/IconVideo.vue";
 </script>
 
 <template>
@@ -43,6 +44,12 @@ import IconYoutube from "./components/icons/IconYoutube.vue";
         <div class="link">
           <IconBook> </IconBook>
           <span>Blog</span>
+        </div>
+      </RouterLink>
+      <RouterLink to="/bangumi">
+        <div class="link">
+          <IconVideo> </IconVideo>
+          <span>Bangumi</span>
         </div>
       </RouterLink>
     </nav>
