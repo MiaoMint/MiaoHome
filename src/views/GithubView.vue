@@ -7,9 +7,6 @@ import GithubCard from "../components/GithubCard.vue";
     <p>{{ data }}</p>
   </div>
   <div v-else class="github-grid">
-    <div v-if="loading" v-for="v in [1, 2, 3]" class="m-1">
-      <GithubCard :skeleton="true"></GithubCard>
-    </div>
     <div v-for="v in data" class="m-1">
       <a :href="v.html_url" target="_blank">
         <GithubCard
@@ -21,6 +18,9 @@ import GithubCard from "../components/GithubCard.vue";
           :forked="v.fork"
         ></GithubCard>
       </a>
+    </div>
+    <div v-if="loading" v-for="v in [1, 2, 3]" class="m-1">
+      <GithubCard :skeleton="true"></GithubCard>
     </div>
   </div>
 </template>

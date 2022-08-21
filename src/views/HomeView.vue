@@ -1,11 +1,11 @@
 <template>
+  <div v-html="data"></div>
   <div v-if="loading" class="skeleton">
     <div style="width: 60%"></div>
     <div style="width: 90%"></div>
     <div style="width: 70%"></div>
     <div style="width: 80%"></div>
   </div>
-  <div v-else v-html="data"></div>
 </template>
 
 <script>
