@@ -10,5 +10,14 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  server: {
+    proxy: {
+      '/bili': {
+        target: 'https://api.bilibili.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/bili/, '')
+      },
+    }
   }
 })

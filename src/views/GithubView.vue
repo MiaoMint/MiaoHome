@@ -6,7 +6,7 @@ import GithubCard from "../components/GithubCard.vue";
   <div v-if="error">
     <p>{{ data }}</p>
   </div>
-  <div v-else class="github-grid">
+  <div v-else class="grid">
     <div v-for="v in data" class="m-1">
       <a :href="v.html_url" target="_blank">
         <GithubCard
@@ -59,7 +59,7 @@ export default {
 };
 </script>
 <style scoped>
-.github-grid {
+.grid {
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
 }
@@ -70,7 +70,7 @@ a:hover {
   color: #3d3d3d;
 }
 @media (max-width: 1024px) {
-  .github-grid {
+  .grid {
     grid-template-columns: 100%;
   }
 }

@@ -1,12 +1,17 @@
 <template>
-  <div>
-    <div></div>
+  <div class="grid">
+    <div v-for="v in data.list">
+      <a :href="v.url" target="_blank" rel="noopener noreferrer">
+        <BangumiCard :cover="v.cover" :title="v.title"></BangumiCard>
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
 import request from "umi-request";
 import config from "../../config";
+import BangumiCard from "../components/BangumiCard.vue";
 export default {
   data() {
     return {
@@ -17,33 +22,42 @@ export default {
     };
   },
   mounted() {
-    let s = async () => {
-      await request(
-        "https://api.bilibili.com/x/space/bangumi/follow/list?type=1&pn=" +
-          this.page +
-          "&ps=15&vmid=" +
-          config.BilibiliUid,
-        {
-          method: "get",
-          credentials: "omit",
-          headers: {
-            "Referer": "https://www.bilibili.com",
-          },
-        }
-      )
-        .then((res) => {
-          this.data = res;
-          console.log(res);
-          this.loading = false;
-        })
-        .catch((err) => {
-          this.error = true;
-          this.data = err;
-          console.log(err);
-          this.loading = false;
-        });
-    };
-    s();
+    request(
+      "/bili/x/space/bangumi/follow/list?type=1&pn=" +
+        this.page +
+        "&ps=15&vmid=" +
+        config.BilibiliUid
+    )
+      .then((res) => {
+        this.data = res.data;
+        console.log(res);
+        this.loading = false;
+      })
+      .catch((err) => {
+        this.error = true;
+        this.data = err;
+        console.log(err);
+        this.loading = false;
+      });
   },
+  components: { BangumiCard },
 };
 </script>
+
+<style>
+.grid {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
+a {
+  color: #3d3d3d;
+}
+a:hover {
+  color: #3d3d3d;
+}
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 50% 50%;
+  }
+}
+</style>
