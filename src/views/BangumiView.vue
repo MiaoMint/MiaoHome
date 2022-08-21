@@ -37,7 +37,9 @@ export default {
     )
       .then((res) => {
         this.data = res.data;
-        console.log(res);
+        this.data.list.forEach(e => {
+          e.cover = e.cover.replace("http","https")
+        });
         this.loading = false;
       })
       .catch((err) => {
