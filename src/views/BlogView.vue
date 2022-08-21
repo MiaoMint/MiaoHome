@@ -39,7 +39,7 @@ export default {
     console.log(config);
     let xml2js = new x2js();
     request
-      .get(config.BlogRss)
+      .get(config.BlogRSS)
       .then((res) => {
         this.data = xml2js.xml2js(res).rss.channel.item;
         this.loading = false;

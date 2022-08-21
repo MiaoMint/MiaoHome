@@ -58,7 +58,7 @@ import config from "../config";
           <span>GitHub</span>
         </div>
       </RouterLink>
-      <RouterLink v-if="config.BlogRss" to="/blog">
+      <RouterLink v-if="config.BlogRSS" to="/blog">
         <div class="link">
           <IconBook> </IconBook>
           <span>Blog</span>

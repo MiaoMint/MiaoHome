@@ -1,5 +1,8 @@
 <template>
-  <div class="grid">
+  <div v-if="error">
+    <p>{{ data }}</p>
+  </div>
+  <div v-else class="grid">
     <a v-for="v in data.list" :href="v.url" target="_blank" rel="noopener noreferrer">
       <BangumiCard :cover="v.cover" :title="v.title"></BangumiCard>
     </a>

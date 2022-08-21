@@ -14,7 +14,8 @@
       <h2>{{ repo }}</h2>
       <p>{{ desc }}</p>
       <div class="mb-2 tags">
-        <span v-if="forked" class="tag mb-1 fork">forked</span>
+        <span v-if="forked" class="tag mb-1 forked">forked</span>
+        <span v-if="archived" class="tag mb-1 archived">archived</span>
         <span class="tag mb-1" v-for="v in tags">{{ v }}</span>
       </div>
     </div>
@@ -30,7 +31,7 @@
 import IconStar from "./icons/IconStar.vue";
 import Iconbranch from "./icons/Iconbranch.vue";
 export default {
-  props: ["tags", "repo", "desc", "starNum", "forkNum", "skeleton", "forked"],
+  props: ["tags", "repo", "desc", "starNum", "forkNum", "skeleton", "forked", "archived"],
   components: { IconStar, Iconbranch },
 };
 </script>
@@ -76,9 +77,14 @@ export default {
   font-size: 13px;
   display: inline-block;
 }
-.fork {
+.forked {
   background-color: rgb(202 70 255 / 12%);
   color: rgb(177 70 255);
+}
+
+.archived{
+  background-color: rgb(70 129 255 / 12%);
+    color: rgb(70 154 255);
 }
 
 .tags {
