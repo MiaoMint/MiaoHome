@@ -19,9 +19,18 @@ import IconVideo from "./components/icons/IconVideo.vue";
       <h1>MiaoMint</h1>
       <p>👋 Hi! 这里是MiaoMint的主页</p>
       <div class="icons">
-        <a href="https://blog.ohman.top" target="_blank" title="Blog"><IconBook></IconBook></a>
-        <a href="https://github.com/miaomint" target="_blank" title="Github"><IconGithub></IconGithub></a>
-        <a href="https://www.youtube.com/channel/UCEDJlXVGVHClXL_ihWsAfKw" target="_blank" title="Youtube"><IconYoutube></IconYoutube></a>
+        <a href="https://blog.ohman.top" target="_blank" title="Blog"
+          ><IconBook></IconBook
+        ></a>
+        <a href="https://github.com/miaomint" target="_blank" title="Github"
+          ><IconGithub></IconGithub
+        ></a>
+        <a
+          href="https://www.youtube.com/channel/UCEDJlXVGVHClXL_ihWsAfKw"
+          target="_blank"
+          title="Youtube"
+          ><IconYoutube></IconYoutube
+        ></a>
         <!-- <a title="Twitter"><IconTwitter></IconTwitter></a> -->
       </div>
     </div>
@@ -109,6 +118,10 @@ nav .link span {
   font-weight: normal;
   letter-spacing: 0em;
   color: #3d3d3d;
+}
+
+nav .link:hover {
+  background: #e8e8e8;
 }
 
 nav .router-link-active .link {
