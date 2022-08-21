@@ -10,12 +10,15 @@
     </div>
   </div>
   <div class="card" v-else>
-    <h2>{{ repo }}</h2>
-    <p>{{ desc }}</p>
-    <div class="mb-2 tags">
-      <span v-if="forked" class="tag mb-1 fork">forked</span>
-      <span class="tag mb-1" v-for="v in tags">{{ v }}</span>
+    <div>
+      <h2>{{ repo }}</h2>
+      <p>{{ desc }}</p>
+      <div class="mb-2 tags">
+        <span v-if="forked" class="tag mb-1 fork">forked</span>
+        <span class="tag mb-1" v-for="v in tags">{{ v }}</span>
+      </div>
     </div>
+
     <div class="icons">
       <div class="icon"><IconStar></IconStar> {{ starNum }}</div>
       <div class="icon"><Iconbranch></Iconbranch> {{ forkNum }}</div>
@@ -39,6 +42,9 @@ export default {
   border-radius: 20px;
   transition: 0.2s ease;
   height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .skeleton .icons {

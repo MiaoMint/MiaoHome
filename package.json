@@ -7,6 +7,7 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "http-proxy-middleware": "^2.0.6",
     "markdown-it": "^13.0.1",
     "umi-request": "^1.4.0",
     "vue": "^3.2.37",

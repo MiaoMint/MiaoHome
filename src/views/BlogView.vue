@@ -36,6 +36,7 @@ export default {
     };
   },
   mounted() {
+    console.log(config);
     let xml2js = new x2js();
     request
       .get(config.BlogRss)

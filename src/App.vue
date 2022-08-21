@@ -6,15 +6,12 @@ import IconTwitter from "./components/icons/IconTwitter.vue";
 import IconHome from "./components/icons/IconHome.vue";
 import IconYoutube from "./components/icons/IconYoutube.vue";
 import IconVideo from "./components/icons/IconVideo.vue";
+import config from "../config";
 </script>
 
 <template>
   <header>
-    <img
-      class="avatar"
-      src="https://q1.qlogo.cn/g?b=qq&k=G1ibIlnicR8Ij4CZO3BF6cVA&s=640"
-      alt="avatar"
-    />
+    <img class="avatar" :src="config.Avatar" alt="avatar" />
     <div class="info">
       <h1>{{ config.Name }}</h1>
       <p>{{ config.Desc }}</p>
@@ -79,10 +76,6 @@ import IconVideo from "./components/icons/IconVideo.vue";
     </main>
   </div>
 </template>
-
-<script>
-import config from "../config";
-</script>
 
 <style scoped>
 .avatar {

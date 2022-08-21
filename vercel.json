@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/bili/(.*)",
+            "destination": "/api/bili"
+        }
+    ]
+}
