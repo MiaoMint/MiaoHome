@@ -11,10 +11,11 @@
     </div>
     <div v-else v-for="v in data" class="mb-4">
       <a :href="v.link" target="_blank">
-        <h3>
-          {{ v.title }} <span style="font-size: 0.2em"> - {{ v.pubDate }}</span>
-        </h3>
+        <h2>
+          {{ v.title }}
+        </h2>
         <p>{{ v.description }}</p>
+        <p style="font-size: 14px;">{{ v.pubDate }}</p>
       </a>
     </div>
   </div>
