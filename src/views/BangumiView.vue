@@ -1,10 +1,9 @@
 <template>
   <div class="grid">
-    <div v-for="v in data.list">
-      <a :href="v.url" target="_blank" rel="noopener noreferrer">
-        <BangumiCard :cover="v.cover" :title="v.title"></BangumiCard>
-      </a>
-    </div>
+    <a v-for="v in data.list" :href="v.url" target="_blank" rel="noopener noreferrer">
+      <BangumiCard :cover="v.cover" :title="v.title"></BangumiCard>
+    </a>
+    <BangumiCard v-if="loading" v-for="v in 3" :skeleton="true"></BangumiCard>
   </div>
 </template>
 
@@ -28,9 +27,9 @@ export default {
         "&ps=15&vmid=" +
         config.BilibiliUid,
       {
-        headers:{
-          "referer":"https://www.bilibili.com/"
-        }
+        headers: {
+          referer: "https://www.bilibili.com/",
+        },
       }
     )
       .then((res) => {

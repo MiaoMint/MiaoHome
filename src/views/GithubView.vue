@@ -19,7 +19,7 @@ import GithubCard from "../components/GithubCard.vue";
         ></GithubCard>
       </a>
     </div>
-    <div v-if="loading" v-for="v in [1, 2, 3]" class="m-1">
+    <div v-if="loading" v-for="v in 3" class="m-1">
       <GithubCard :skeleton="true"></GithubCard>
     </div>
   </div>
