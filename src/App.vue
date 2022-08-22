@@ -10,7 +10,7 @@ import config from "../config";
 </script>
 
 <template>
-  <header>
+  <header :class="{ reverse: config.Style.HeaderReverseSpace }">
     <img class="avatar" :src="config.Avatar" alt="avatar" />
     <div class="info">
       <h1>{{ config.Name }}</h1>
@@ -92,8 +92,15 @@ header {
   margin-bottom: 63px;
   margin-top: 126px;
 }
+
+.reverse {
+  justify-content: space-around;
+  flex-direction: row-reverse;
+}
+
 .info {
   margin-left: 28px;
+  width: 310px;
 }
 .info h1 {
   font-size: 36px;
@@ -174,7 +181,7 @@ main {
   header {
     margin-bottom: 25px;
     margin-top: 20px;
-    flex-direction: column;
+    flex-direction: column !important;
     text-align: center;
   }
   header .info {

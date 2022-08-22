@@ -11,8 +11,10 @@ export default defineConfig({
     createHtmlPlugin({
       inject: {
         data: {
-          title: config.SiteTitle,
-          favicon: config.Favicon
+          title: config.SiteHead.Title,
+          favicon: config.SiteHead.Favicon,
+          keywords: config.SiteHead.KeyWords,
+          desc: config.SiteHead.Desc
         },
       },
     }),],
