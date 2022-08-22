@@ -3,6 +3,12 @@ const config = {
     // 名字
     Name: "MiaoMint",
 
+    // 站点标题
+    SiteTitle: "MiaoMint 的主页",
+
+    // 站点图标
+    Favicon: "https://q1.qlogo.cn/g?b=qq&k=G1ibIlnicR8Ij4CZO3BF6cVA&s=640",
+
     // 头像
     Avatar: "https://q1.qlogo.cn/g?b=qq&k=G1ibIlnicR8Ij4CZO3BF6cVA&s=640",
 
