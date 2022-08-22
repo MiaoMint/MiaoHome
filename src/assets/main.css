@@ -116,16 +116,21 @@ body:before {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: .1;
   z-index: -1;
   content: "";
   position: fixed;
-  background: url(https://api.paugram.com/wallpaper/) center/cover;
 }
 
-#app {
+header {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+}
+
+.content {
   max-width: 1024px;
   margin: auto;
+  min-height: 100vh;
 }
 
 .skeleton div {
@@ -147,7 +152,7 @@ body:before {
   }
 }
 
-img{
+img {
   max-width: 100%;
   border-radius: 10px;
 }
@@ -155,6 +160,7 @@ img{
 .markdown {
   word-wrap: break-word;
 }
+
 .markdown table {
   display: block;
   width: 100%;
@@ -164,13 +170,16 @@ img{
   border-spacing: 0;
   border-collapse: collapse;
 }
+
 .markdown table tr {
   border-top: 1px solid #e9ebed;
 }
+
 .markdown table td {
   padding: 6px 13px;
   border: 1px solid #e9ebed;
 }
+
 .markdown blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
@@ -178,13 +187,20 @@ img{
   padding: 0.5em 10px;
   word-break: break-all;
 }
-.markdown a{
+
+.markdown a {
   text-decoration: underline;
 }
+
 .markdown p {
   font-size: 18px;
 }
+
 .markdown pre {
   width: 100%;
   overflow: auto;
+}
+
+.markdown img {
+  border-radius: 0
 }

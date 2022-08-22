@@ -14,7 +14,10 @@ export default defineConfig({
           title: config.SiteHead.Title,
           favicon: config.SiteHead.Favicon,
           keywords: config.SiteHead.KeyWords,
-          desc: config.SiteHead.Desc
+          desc: config.SiteHead.Desc,
+          background: config.Style.SiteBackground,
+          opacity: config.Style.SiteOpacity,
+          blur: config.Style.SiteBackgroundBlur,
         },
       },
     }),],

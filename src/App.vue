@@ -10,9 +10,9 @@ import config from "../config";
 </script>
 
 <template>
-  <header :class="{ reverse: config.Style.HeaderReverseSpace }">
-    <img class="avatar" :src="config.Avatar" alt="avatar" />
-    <div class="info">
+  <header :class="config.Style.HeaderLayout">
+    <img v-if="config.Avatar" class="avatar" :src="config.Avatar" alt="avatar" />
+    <div :style="{ color: config.Style.HeaderFontColor }" class="info">
       <h1>{{ config.Name }}</h1>
       <p>{{ config.Desc }}</p>
       <div class="icons">
@@ -44,40 +44,46 @@ import config from "../config";
       </div>
     </div>
   </header>
-  <div class="content">
-    <nav>
-      <RouterLink to="/">
-        <div class="link">
-          <IconHome> </IconHome>
-          <span>Home</span>
-        </div>
-      </RouterLink>
-      <RouterLink v-if="config.GithubUsername" to="/github">
-        <div class="link">
-          <IconGithub> </IconGithub>
-          <span>GitHub</span>
-        </div>
-      </RouterLink>
-      <RouterLink v-if="config.BlogRSS" to="/blog">
-        <div class="link">
-          <IconBook> </IconBook>
-          <span>Blog</span>
-        </div>
-      </RouterLink>
-      <RouterLink v-if="config.BilibiliUid" to="/bangumi">
-        <div class="link">
-          <IconVideo> </IconVideo>
-          <span>Bangumi</span>
-        </div>
-      </RouterLink>
-    </nav>
-    <main>
-      <RouterView />
-    </main>
+
+  <div
+    class="content-background"
+    :style="{ 'background-color': config.Style.ContentBacgroundColor }"
+  >
+    <div class="content">
+      <nav>
+        <RouterLink to="/">
+          <div class="link">
+            <IconHome> </IconHome>
+            <span>Home</span>
+          </div>
+        </RouterLink>
+        <RouterLink v-if="config.GithubUsername" to="/github">
+          <div class="link">
+            <IconGithub> </IconGithub>
+            <span>GitHub</span>
+          </div>
+        </RouterLink>
+        <RouterLink v-if="config.BlogRSS" to="/blog">
+          <div class="link">
+            <IconBook> </IconBook>
+            <span>Blog</span>
+          </div>
+        </RouterLink>
+        <RouterLink v-if="config.BilibiliUid" to="/bangumi">
+          <div class="link">
+            <IconVideo> </IconVideo>
+            <span>Bangumi</span>
+          </div>
+        </RouterLink>
+      </nav>
+      <main>
+        <RouterView />
+      </main>
+    </div>
   </div>
 </template>
 
-<style scoped>
+<style>
 .avatar {
   height: 140px;
   width: 140px;
@@ -93,9 +99,22 @@ header {
   margin-top: 126px;
 }
 
-.reverse {
+.ReverseSpace {
   justify-content: space-around;
   flex-direction: row-reverse;
+}
+
+.VCenter {
+  flex-direction: column;
+  text-align: center;
+}
+
+.VCenter .info {
+  margin-left: 0;
+}
+
+.Left {
+  justify-content: flex-start;
 }
 
 .info {
@@ -154,6 +173,12 @@ nav .link svg {
   display: flex;
   flex-direction: row;
   padding: 20px;
+}
+
+.content-background {
+  border-radius: 50px 50px 0 0;
+  background-color: #fff;
+  padding-top: 10px;
 }
 
 main {

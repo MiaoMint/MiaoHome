@@ -30,7 +30,7 @@ const config = {
 
     // 默认 /home.md 
     // 填 Github 则使用Github profile的readme.md文件 
-    HomeMd: "Github",
+    HomeMd: "/home.md",
 
     // 网页信息
     SiteHead: {
@@ -49,8 +49,30 @@ const config = {
 
     // 网页样式
     Style: {
-        // 头部反向空间 否则横向居中
-        HeaderReverseSpace: true
+
+        // 头部布局
+        // 不填默认横向居中
+        // 竖向居中: VCenter 居左: Left 反向空间: ReverseSpace
+        HeaderLayout: "Left",
+
+        // 内容背景颜色 #fff0 是透明
+        ContentBacgroundColor: "#fff",
+
+        // 头部字体颜色
+        HeaderFontColor: "#000",
+
+        // 网页背景
+        // 可以是图片 url(/img/bg.png) 
+        // 也可以是颜色 "#ffcdcd center/cover"
+        SiteBackground: "url(https://pan.ohman.top/api/raw/?path=/bg.jpg) center/cover",
+
+        // 网页背景模糊
+        SiteBackgroundBlur: "0px",
+
+        // 网页背景不透明度 1是完全透明
+        SiteOpacity: "1",
+
+
     },
 
 
