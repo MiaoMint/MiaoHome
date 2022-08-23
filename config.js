@@ -64,7 +64,7 @@ const config = {
         // 网页背景
         // 可以是图片 url(/img/bg.png) 
         // 也可以是颜色 "#ffcdcd center/cover"
-        SiteBackground: "url(https://s1.ax1x.com/2022/08/23/v6TnwF.jpg) center/cover",
+        SiteBackground: "url(https://img.truimo.com/2022/807b270630a51.jpg) center/cover",
 
         // 网页背景模糊
         SiteBackgroundBlur: "0px",
