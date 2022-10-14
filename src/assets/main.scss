@@ -6,7 +6,8 @@
 h1,
 h2,
 h3,
-h4.h5,
+h4,
+h5,
 h6,
 p {
   margin: 0;
@@ -159,48 +160,48 @@ img {
 
 .markdown {
   word-wrap: break-word;
-}
 
-.markdown table {
-  display: block;
-  width: 100%;
-  width: max-content;
-  max-width: 100%;
-  overflow: auto;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
+  table {
+    display: block;
+    width: 100%;
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
 
-.markdown table tr {
-  border-top: 1px solid #e9ebed;
-}
+  table tr {
+    border-top: 1px solid #e9ebed;
+  }
 
-.markdown table td {
-  padding: 6px 13px;
-  border: 1px solid #e9ebed;
-}
+  table td {
+    padding: 6px 13px;
+    border: 1px solid #e9ebed;
+  }
 
-.markdown blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  word-break: break-all;
-}
+  blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    word-break: break-all;
+  }
 
-.markdown a {
-  text-decoration: underline;
-}
+  a {
+    text-decoration: underline;
+  }
 
-.markdown p {
-  font-size: 18px;
-}
+  p {
+    font-size: 18px;
+  }
 
-.markdown pre {
-  width: 100%;
-  overflow: auto;
-}
+  pre {
+    width: 100%;
+    overflow: auto;
+  }
 
-.markdown img {
-  border-radius: 0
+  img {
+    border-radius: 0
+  }
 }

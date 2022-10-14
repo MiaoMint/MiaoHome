@@ -1,64 +1,58 @@
-<template>
-  <div v-if="error">
-    <p>{{ data }}</p>
-  </div>
-  <div v-else>
-    <div  v-for="v in data" class="mb-4">
-      <a :href="v.link" target="_blank">
-        <h2>
-          {{ v.title }}
-        </h2>
-        <p>{{ v.description }}</p>
-        <p style="font-size: 14px">{{ v.pubDate }}</p>
-      </a>
-    </div>
-    <div v-if="loading"  class="skeleton">
-      <div style="width: 60%"></div>
-      <div style="width: 90%"></div>
-      <div style="width: 70%"></div>
-      <div style="width: 80%"></div>
-    </div>
-  </div>
-</template>
+<script setup lang="ts">
 
-<script>
+import { ref, onMounted } from "vue";
 import x2js from "x2js";
 import request from "umi-request";
 import config from "../../config";
 
-export default {
-  data() {
-    return {
-      xml: "",
-      data: "",
-      loading: true,
-      error: false,
-    };
-  },
-  mounted() {
-    console.log(config);
+const data = ref<any>()
+const loading = ref<boolean>(true);
+const error = ref<boolean>(false);
+
+
+onMounted(() => {
     let xml2js = new x2js();
     request
-      .get(config.BlogRSS)
-      .then((res) => {
-        this.data = xml2js.xml2js(res).rss.channel.item;
-        this.loading = false;
-      })
-      .catch((err) => {
-        this.error = true;
-        this.data = err;
-        this.loading = false;
-      });
-  },
+        .get(config.BlogRSS)
+        .then((res) => {
+            data.value = (xml2js.xml2js(res) as any).rss.channel.item;
+            loading.value = false;
+        })
+        .catch((err) => {
+            error.value = true;
+            data.value = err;
+            loading.value = false;
+        });
+})
 
-  methods: {
-    getData() {},
-  },
-};
 </script>
 
+<template>
+    <div v-if="error">
+        <p>{{ data }}</p>
+    </div>
+    <div v-else>
+        <div v-for="v in data" class="mb-4">
+            <a :href="v.link" target="_blank">
+                <h2>
+                    {{ v.title }}
+                </h2>
+                <p>{{ v.description }}</p>
+                <p style="font-size: 14px">{{ v.pubDate }}</p>
+            </a>
+        </div>
+        <div v-if="loading" class="skeleton">
+            <div style="width: 60%"></div>
+            <div style="width: 90%"></div>
+            <div style="width: 70%"></div>
+            <div style="width: 80%"></div>
+        </div>
+    </div>
+</template>
+  
 <style scoped>
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 </style>
+  

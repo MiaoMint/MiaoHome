@@ -10,22 +10,25 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  props: ["cover", "title", "skeleton"],
-};
+  
+<script setup lang="ts">
+//   export default {
+//     props: ["cover", "title", "skeleton"],
+//   };
+const props = defineProps(["cover", "title", "skeleton"])
 </script>
-
-<style scoped>
+  
+<style scoped lang="scss">
 .card {
   border-radius: 0 5px 0 5px;
   margin: 16px;
 }
 
-.skeleton .img {
-  height: 300px;
-  border-radius: 10px;
+.skeleton {
+  .img {
+    height: 300px;
+    border-radius: 10px;
+  }
 }
 
 img {
@@ -38,8 +41,12 @@ img {
   .card {
     margin: 8px;
   }
-  .skeleton .img {
-    height: 200px;
+
+  .skeleton {
+    .img {
+      height: 200px;
+    }
   }
 }
 </style>
+  

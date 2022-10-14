@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import IconBook from "./components/icons/IconBook.vue";
 import IconGithub from "./components/icons/IconGithub.vue";
@@ -16,39 +16,24 @@ import config from "../config";
       <h1>{{ config.Name }}</h1>
       <p>{{ config.Desc }}</p>
       <div class="icons">
-        <a v-if="config.BlogUrl" :href="config.BlogUrl" target="_blank" title="Blog"
-          ><IconBook></IconBook
-        ></a>
-        <a
-          v-if="config.GithubUsername"
-          :href="'https://github.com/' + config.GithubUsername"
-          target="_blank"
-          title="Github"
-          ><IconGithub></IconGithub
-        ></a>
-        <a
-          v-if="config.YoutubeUrl"
-          :href="config.YoutubeUrl"
-          target="_blank"
-          title="Youtube"
-          ><IconYoutube></IconYoutube
-        ></a>
-        <a
-          v-if="config.TwitterUrl"
-          :href="config.TwitterUrl"
-          target="_blank"
-          title="Twitter"
-        >
-          <IconTwitter></IconTwitter
-        ></a>
+        <a v-if="config.BlogUrl" :href="config.BlogUrl" target="_blank" title="Blog">
+          <IconBook></IconBook>
+        </a>
+        <a v-if="config.GithubUsername" :href="'https://github.com/' + config.GithubUsername" target="_blank"
+          title="Github">
+          <IconGithub></IconGithub>
+        </a>
+        <a v-if="config.YoutubeUrl" :href="config.YoutubeUrl" target="_blank" title="Youtube">
+          <IconYoutube></IconYoutube>
+        </a>
+        <a v-if="config.TwitterUrl" :href="config.TwitterUrl" target="_blank" title="Twitter">
+          <IconTwitter></IconTwitter>
+        </a>
       </div>
     </div>
   </header>
 
-  <div
-    class="content-background"
-    :style="{ 'background-color': config.Style.ContentBacgroundColor }"
-  >
+  <div class="content-background" :style="{ 'background-color': config.Style.ContentBacgroundColor }">
     <div class="content">
       <nav>
         <RouterLink to="/">
@@ -83,13 +68,14 @@ import config from "../config";
   </div>
 </template>
 
-<style>
+<style scoped lang="scss">
 .avatar {
   height: 140px;
   width: 140px;
   object-fit: cover;
   border-radius: 50%;
 }
+
 header {
   width: 100%;
   display: flex;
@@ -120,53 +106,58 @@ header {
 .info {
   margin-left: 28px;
   width: 310px;
-}
-.info h1 {
-  font-size: 36px;
-  font-weight: normal;
-}
-.info p {
-  font-size: 20px;
-}
-.info .icons svg {
-  margin-right: 8px;
+
+  h1 {
+    font-size: 36px;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .icons svg {
+    margin-right: 8px;
+  }
+
+
 }
 
 nav {
   margin-right: 36px;
-}
 
-nav .link {
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  width: 110px;
-  height: 114px;
-  align-items: center;
-  justify-content: center;
-}
+  .link {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    width: 110px;
+    height: 114px;
+    align-items: center;
+    justify-content: center;
+  }
 
-nav .link span {
-  font-size: 22px;
-  font-weight: normal;
-  letter-spacing: 0em;
-  color: #3d3d3d;
-}
+  .link span {
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: 0em;
+    color: #3d3d3d;
+  }
 
-nav .link:hover {
-  background: #e8e8e8;
-}
+  .link:hover {
+    background: #e8e8e8;
+  }
 
-nav .router-link-active .link {
-  background: #e8e8e8;
-}
+  .router-link-active .link {
+    background: #e8e8e8;
+  }
 
-nav .link svg {
-  margin-bottom: 10px;
-  width: 40px;
-  height: 40px;
+  .link svg {
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .content {
@@ -189,28 +180,36 @@ main {
   .content {
     flex-direction: column;
   }
+
   nav {
     overflow: auto;
     height: 134px;
     white-space: pre;
     margin-right: 0;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    /* Firefox */
     text-align: center;
+
+    &::-webkit-scrollbar {
+      display: none;
+      /* Chrome Safari */
+    }
+
+    a {
+      display: inline-block;
+    }
   }
-  nav::-webkit-scrollbar {
-    display: none; /* Chrome Safari */
-  }
-  nav a {
-    display: inline-block;
-  }
+
   header {
     margin-bottom: 25px;
     margin-top: 20px;
     flex-direction: column !important;
     text-align: center;
+
+    .info {
+      margin-left: 0;
+    }
   }
-  header .info {
-    margin-left: 0;
-  }
+
 }
 </style>
