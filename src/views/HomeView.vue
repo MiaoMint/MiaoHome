@@ -25,9 +25,10 @@ onMounted(() => {
       // (data.value as HTMLDivElement).innerHTML = md.render(res)
       data.value!.innerHTML = md.render(res);
       loading.value = false
+      
     })
     .catch((err) => {
-      data.value = err;
+      data.value!.innerHTML = err;
       loading.value = false
     });
 });

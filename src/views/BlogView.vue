@@ -50,9 +50,12 @@ onMounted(() => {
     </div>
 </template>
   
-<style scoped>
+<style scoped lang="scss">
 a:hover {
     text-decoration: underline;
+}
+p{
+    word-break: break-all;
 }
 </style>
   

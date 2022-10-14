@@ -22,21 +22,15 @@ onMounted(() => {
         }
     )
         .then((res) => {
-            console.log("success");
-
             data.value = res.data.list;
-            console.log(res.data);
             data.value.forEach((e: { cover: string; }) => {
                 e.cover = e.cover.replace("http", "https")
             });
             loading.value = false;
         })
         .catch((err) => {
-            console.log("fail");
-
             error.value = true;
             data.value = err;
-            console.log(err);
             loading.value = false;
         });
 })
