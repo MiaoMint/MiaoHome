@@ -148,12 +148,11 @@ nav {
     display: flex;
     justify-content: center;
     width: fit-content;
-    padding: 10px 0px;
+    padding: 8px 2px;
     border-radius: 30px;
     backdrop-filter: blur(24px);
     background-color: #e8e8e8c5;
     border: solid rgb(213, 213, 213) 1px;
-    height: 90px;
   }
 
   .link {
@@ -162,10 +161,10 @@ nav {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    margin: 0px 10px;
+    margin: 0px 8px;
     border-radius: 20px;
-    width: 83px;
-    height: 86px;
+    width: 75px;
+    height: 75px;
 
     .icon {
       height: 30rem;
@@ -182,6 +181,7 @@ nav {
 
     span {
       overflow: hidden;
+      font-size: 14px;
     }
 
   }
@@ -224,7 +224,6 @@ main {
     text-align: center;
 
     .links {
-
       border-radius: 0;
       width: 100%;
     }
