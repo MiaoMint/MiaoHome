@@ -35,8 +35,7 @@ onMounted(() => {
 </script>
 
 <template>
-
-
+<div id="home">
   <div class="markdown" id="home" ref="data"></div>
   <div v-if="loading" class="skeleton">
     <div style="width: 60%"></div>
@@ -44,8 +43,6 @@ onMounted(() => {
     <div style="width: 70%"></div>
     <div style="width: 80%"></div>
   </div>
+</div>
 </template>
 
-<style scoped lang="scss">
-
-</style>

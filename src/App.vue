@@ -39,7 +39,11 @@ function scrollToTop() {
           </div>
         </div>
       </header>
-      <RouterView @vnode-updated="scrollToTop" />
+      <RouterView @vnode-updated="scrollToTop" v-slot="{ Component }" >
+        <transition name="slide-fade" >
+          <component :is="Component" />
+        </transition>
+      </RouterView>
     </main>
     <nav>
       <div class="links">
@@ -80,7 +84,7 @@ function scrollToTop() {
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 header {
   width: 100%;
   display: flex;
@@ -88,6 +92,7 @@ header {
   align-items: center;
   margin-bottom: 63px;
   margin-top: 126px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 
   .avatar {
     width: 140px;
@@ -133,9 +138,7 @@ header {
   }
 
 }
-</style>
 
-<style scoped lang="scss">
 nav {
   position: fixed;
   bottom: 16px;
@@ -196,6 +199,16 @@ nav {
 
 }
 
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
 main {
   padding: 16px;
   padding-bottom: 130px;
@@ -203,7 +216,6 @@ main {
 
 
 @media (max-width: 1024px) {
-
   header {
     margin-bottom: 25px;
     margin-top: 20px;
