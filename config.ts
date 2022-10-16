@@ -55,8 +55,6 @@ const config = {
         // 竖向居中: VCenter 居左: Left 反向空间: ReverseSpace
         HeaderLayout: "Left",
 
-        // 内容背景颜色 #fff0 是透明
-        ContentBacgroundColor: "#fff",
 
         // 头部字体颜色
         HeaderFontColor: "#000",
@@ -70,7 +68,7 @@ const config = {
         SiteBackgroundBlur: "0px",
 
         // 网页背景不透明度 1是完全透明
-        SiteOpacity: "1",
+        SiteOpacity: ".1",
 
 
     },

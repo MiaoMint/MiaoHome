@@ -129,9 +129,9 @@ header {
 }
 
 .content {
-  max-width: 1024px;
+  max-width: 900px;
   margin: auto;
-  min-height: 100vh;
+  height: calc(100vh + 1px);
 }
 
 .skeleton div {

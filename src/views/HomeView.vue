@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted} from "vue";
+import { ref, onMounted } from "vue";
 import MarkdownIt from "markdown-it";
 import request from "umi-request";
 import config from "../../config";
@@ -25,7 +25,7 @@ onMounted(() => {
       // (data.value as HTMLDivElement).innerHTML = md.render(res)
       data.value!.innerHTML = md.render(res);
       loading.value = false
-      
+
     })
     .catch((err) => {
       data.value!.innerHTML = err;
@@ -35,6 +35,8 @@ onMounted(() => {
 </script>
 
 <template>
+
+
   <div class="markdown" id="home" ref="data"></div>
   <div v-if="loading" class="skeleton">
     <div style="width: 60%"></div>
@@ -43,3 +45,7 @@ onMounted(() => {
     <div style="width: 80%"></div>
   </div>
 </template>
+
+<style scoped lang="scss">
+
+</style>
