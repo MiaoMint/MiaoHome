@@ -9,7 +9,7 @@ import IconVideo from "./components/icons/IconVideo.vue";
 import config from "../config";
 
 function scrollToTop() {
-  window.scrollTo(0, 0)
+  window.scrollTo(0,0);
 }
 
 </script>
@@ -39,9 +39,11 @@ function scrollToTop() {
           </div>
         </div>
       </header>
-      <RouterView @vnode-updated="scrollToTop" v-slot="{ Component }" >
-        <transition name="slide-fade" >
-          <component :is="Component" />
+      <RouterView @vnode-updated="scrollToTop" v-slot="{ Component }">
+        <transition name="slide-fade">
+          <KeepAlive>
+            <component :is="Component" />
+          </KeepAlive>
         </transition>
       </RouterView>
     </main>

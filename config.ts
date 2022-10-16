@@ -30,7 +30,7 @@ const config = {
 
     // 默认 /home.md 
     // 填 Github 则使用Github profile的readme.md文件 
-    HomeMd: "Github",
+    HomeMd: "/home.md",
 
     // 网页信息
     SiteHead: {
