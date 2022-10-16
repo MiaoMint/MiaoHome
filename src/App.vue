@@ -9,7 +9,7 @@ import IconVideo from "./components/icons/IconVideo.vue";
 import config from "../config";
 
 function scrollToTop() {
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 }
 
 </script>
@@ -158,6 +158,7 @@ nav {
     backdrop-filter: blur(24px);
     background-color: #e8e8e8c5;
     border: solid rgb(213, 213, 213) 1px;
+    box-shadow: 3px 3px 4px 0px rgb(145 145 145 / 15%);
   }
 
   .link {
