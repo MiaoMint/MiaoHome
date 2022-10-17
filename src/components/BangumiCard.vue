@@ -21,7 +21,7 @@ const props = defineProps(["cover", "title", "skeleton"])
 <style scoped lang="scss">
 .card {
   border-radius: 0 5px 0 5px;
-  margin: 16px;
+  margin: 8px;
 }
 
 .skeleton {

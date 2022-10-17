@@ -53,7 +53,7 @@ const config = {
         // 头部布局
         // 不填默认横向居中
         // 竖向居中: VCenter 居左: Left 反向空间: ReverseSpace
-        HeaderLayout: "Left",
+        HeaderLayout: "VCenter",
 
 
         // 头部字体颜色

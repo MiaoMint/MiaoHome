@@ -3,6 +3,8 @@ import { ref, onMounted } from "vue";
 import GithubCard from "../components/GithubCard.vue";
 import request from "umi-request";
 import config from "../../config";
+import IconGithub from "../components/icons/IconGithub.vue";
+import HeaderTitle from "../components/HeaderTitle.vue";
 
 const data = ref<any>()
 const error = ref<boolean>(false)
@@ -28,18 +30,25 @@ onMounted(() => {
 </script>
 
 <template>
-    <div v-if="error">
-        <p>{{ data }}</p>
-    </div>
-    <div v-else class="grid">
-        <div v-for="v in data" class="m-1">
-            <a :href="v.html_url" target="_blank">
-                <GithubCard :tags="v.topics" :repo="v.name" :desc="v.description" :starNum="v.stargazers_count"
-                    :forkNum="v.forks_count" :forked="v.fork" :archived="v.archived"></GithubCard>
-            </a>
+    <div id="github">
+        <HeaderTitle>
+            <h1><a :href="'http://github.com/' + config.GithubUsername" target="_blank" rel="noopener noreferrer"><span>
+                        <IconGithub />
+                    </span></a> GitHub</h1>
+        </HeaderTitle>
+        <div v-if="error">
+            <p>{{ data }}</p>
         </div>
-        <div v-if="loading" v-for="v in 3" class="m-1">
-            <GithubCard :skeleton="true"></GithubCard>
+        <div v-else class="grid">
+            <div v-for="v in data" class="m-1">
+                <a :href="v.html_url" target="_blank">
+                    <GithubCard :tags="v.topics" :repo="v.name" :desc="v.description" :starNum="v.stargazers_count"
+                        :forkNum="v.forks_count" :forked="v.fork" :archived="v.archived"></GithubCard>
+                </a>
+            </div>
+            <div v-if="loading" v-for="v in 3" class="m-1">
+                <GithubCard :skeleton="true"></GithubCard>
+            </div>
         </div>
     </div>
 </template>

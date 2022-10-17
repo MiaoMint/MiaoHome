@@ -17,28 +17,6 @@ function scrollToTop() {
 <template>
   <div class="content">
     <main>
-      <header :class="config.Style.HeaderLayout">
-        <img v-if="config.Avatar" class="avatar" :src="config.Avatar" alt="avatar" />
-        <div :style="{ color: config.Style.HeaderFontColor }" class="info">
-          <h1>{{ config.Name }}</h1>
-          <p>{{ config.Desc }}</p>
-          <div class="icons">
-            <a v-if="config.BlogUrl" :href="config.BlogUrl" target="_blank" title="Blog">
-              <IconBook></IconBook>
-            </a>
-            <a v-if="config.GithubUsername" :href="'https://github.com/' + config.GithubUsername" target="_blank"
-              title="Github">
-              <IconGithub></IconGithub>
-            </a>
-            <a v-if="config.YoutubeUrl" :href="config.YoutubeUrl" target="_blank" title="Youtube">
-              <IconYoutube></IconYoutube>
-            </a>
-            <a v-if="config.TwitterUrl" :href="config.TwitterUrl" target="_blank" title="Twitter">
-              <IconTwitter></IconTwitter>
-            </a>
-          </div>
-        </div>
-      </header>
       <RouterView @vnode-updated="scrollToTop" v-slot="{ Component }">
         <transition name="slide-fade">
           <KeepAlive>
@@ -87,60 +65,6 @@ function scrollToTop() {
 </template>
 
 <style scoped lang="scss">
-header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 63px;
-  margin-top: 126px;
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-
-  .avatar {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .info {
-    margin-left: 28px;
-    width: 310px;
-
-    h1 {
-      font-size: 36px;
-      font-weight: normal;
-    }
-
-    p {
-      font-size: 20px;
-    }
-
-    .icons svg {
-      margin-right: 8px;
-    }
-  }
-
-  &.ReverseSpace {
-    justify-content: space-around;
-    flex-direction: row-reverse;
-  }
-
-  &.VCenter {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  &.VCenter .info {
-    margin-left: 0;
-  }
-
-  &.Left {
-    justify-content: flex-start;
-  }
-
-}
-
 nav {
   position: fixed;
   bottom: 16px;
@@ -219,16 +143,6 @@ main {
 
 
 @media (max-width: 1024px) {
-  header {
-    margin-bottom: 25px;
-    margin-top: 20px;
-    flex-direction: column !important;
-    text-align: center;
-
-    .info {
-      margin-left: 0;
-    }
-  }
 
   nav {
     bottom: 0;

@@ -3,6 +3,8 @@ import { ref, onMounted } from "vue";
 import request from "umi-request";
 import config from "../../config";
 import BangumiCard from "../components/BangumiCard.vue";
+import HeaderTitle from "../components/HeaderTitle.vue";
+import IconVideo from "../components/icons/IconVideo.vue";
 
 
 const data = ref<any>();
@@ -37,15 +39,25 @@ onMounted(() => {
 </script>
 
 <template>
-    <div v-if="error">
-        <p>{{ data }}</p>
+
+    <div id="bangumi">
+        <HeaderTitle>
+            <h1><a :href="'https://space.bilibili.com/' + config.BilibiliUid" target="_blank"
+                    rel="noopener noreferrer"><span>
+                        <IconVideo />
+                    </span></a> Bangumi</h1>
+        </HeaderTitle>
+        <div v-if="error">
+            <p>{{ data }}</p>
+        </div>
+        <div v-else class="grid">
+            <a v-for="v in data" :href="v.url" target="_blank" rel="noopener noreferrer">
+                <BangumiCard :cover="v.cover" :title="v.title"></BangumiCard>
+            </a>
+            <BangumiCard v-if="loading" v-for="v in 3" :skeleton="true"></BangumiCard>
+        </div>
     </div>
-    <div v-else class="grid">
-        <a v-for="v in data" :href="v.url" target="_blank" rel="noopener noreferrer">
-            <BangumiCard :cover="v.cover" :title="v.title"></BangumiCard>
-        </a>
-        <BangumiCard v-if="loading" v-for="v in 3" :skeleton="true"></BangumiCard>
-    </div>
+
 </template>
   
 <style scoped lang="scss">
