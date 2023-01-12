@@ -30,7 +30,7 @@ const getData = (page: number) => {
     )
         .then((res) => {
             res.data.list.forEach((e: { cover: string; }) => {
-                e.cover = e.cover.replace("http", "https")
+                e.cover = e.cover.replace("http://", "https://")
             });
             if (page != 1) {
                 data.value = [...data.value, ...res.data.list]
