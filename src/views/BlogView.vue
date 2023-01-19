@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { ref, onMounted } from "vue";
-import x2js from "x2js";
+import { extractFromXml } from '@extractus/feed-extractor'
 import request from "umi-request";
 import config from "../../config";
 import HeaderTitle from "../components/HeaderTitle.vue";
@@ -11,13 +11,11 @@ const data = ref<any>()
 const loading = ref<boolean>(true);
 const error = ref<boolean>(false);
 
-
 onMounted(() => {
-    let xml2js = new x2js();
     request
         .get(config.BlogRSS)
         .then((res) => {
-            data.value = (xml2js.xml2js(res) as any).rss.channel.item;
+            data.value = (extractFromXml(res) as any).entries;
             loading.value = false;
         })
         .catch((err) => {
@@ -46,7 +44,7 @@ onMounted(() => {
                         {{ v.title }}
                     </h2>
                     <p>{{ v.description }}</p>
-                    <p style="font-size: 14px">{{ v.pubDate }}</p>
+                    <p style="font-size: 14px">{{ v.published.substring(0,10) }}</p>
                 </a>
             </div>
             <div v-if="loading" class="skeleton m-1">
@@ -63,7 +61,7 @@ onMounted(() => {
 a:hover {
     text-decoration: underline;
 }
-p{
+h2, p{
     word-break: break-all;
 }
 </style>
