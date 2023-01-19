@@ -63,7 +63,7 @@ onMounted(() => {
 a:hover {
     text-decoration: underline;
 }
-p{
+h2, p{
     word-break: break-all;
 }
 </style>
