@@ -14,10 +14,10 @@ const config = {
     GithubUsername: "MiaoMint",
 
     // 博客RSS订阅
-    BlogRSS: "https://blog.ohman.top/feed/",
+    BlogRSS: "https://blog.0u0.ren/feed/",
 
     // 博客链接
-    BlogUrl: "https://blog.ohman.top",
+    BlogUrl: "https://blog.0u0.ren",
 
     // 油管链接
     YoutubeUrl: "https://www.youtube.com/channel/UCEDJlXVGVHClXL_ihWsAfKw",
