@@ -2,27 +2,32 @@
 <html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="<%- favicon %>" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords" content="<%- keywords %>">
-  <meta name="description" content="<%- desc %>">
-  <title>
-    <%- title %>
-  </title>
-  <style>
-    body:before {
-      opacity: <%- opacity %>;
-      background: <%- background %>;
-      filter: blur(<%- blur %>);
-      transition: 0.2s ease;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="<%- favicon %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="<%- keywords %>">
+    <meta name="description" content="<%- desc %>">
+    <title>
+        <%- title %>
+    </title>
+    <style>
+        body:before {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            content: "";
+            position: fixed;
+            opacity: .1;
+            background: <%- background %>;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.ts"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>

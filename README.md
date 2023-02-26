@@ -1,5 +1,5 @@
 # MiaoHome
-Miao Home! 一个使用 Vue3 的导航页。（完整功能需使用 Vercel 进行部署）
+Miao Home! 一个使用 React 的导航页。（完整功能需使用 Vercel 进行部署）
 ## 使用
 
 安装依赖：
