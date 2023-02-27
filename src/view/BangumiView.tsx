@@ -72,9 +72,11 @@ function BangumiCard(props: BangumiCardProps) {
 function Skeletons() {
     return (
         <>
-            <Skeleton></Skeleton>
-            <Skeleton></Skeleton>
-            <Skeleton></Skeleton>
+            {
+                new Array(6).fill(1).map((_, i) => (
+                    <Skeleton key={i} ></Skeleton>
+                ))
+            }
         </>
     )
 }

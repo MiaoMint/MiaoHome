@@ -33,13 +33,12 @@ export default function BlogView() {
             }
             {
                 error ? <div >{error.message}</div> : !blogs.length ?
-                    <>
-                        <Skeleton className="mb-3"></Skeleton>
-                        <Skeleton className="mb-3"></Skeleton>
-                    </>
+                    new Array(4).fill(1).map((_, i) => (
+                        <Skeleton key={i} className="mb-3"></Skeleton>
+                    ))
                     : null
             }
-        </Animation>
+        </Animation >
     )
 }
 

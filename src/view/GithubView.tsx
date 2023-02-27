@@ -30,10 +30,9 @@ export default function GithubView() {
               <GithubCard {...repo} key={index} />
             ))
             :
-            <>
-              <Skeleton></Skeleton>
-              <Skeleton></Skeleton>
-            </>
+            new Array(8).fill(1).map((_, i) => (
+              <Skeleton key={i}></Skeleton>
+            ))
         }
       </div>
     </Animation>
