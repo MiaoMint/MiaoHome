@@ -2,6 +2,7 @@ import { Film } from "lucide-react";
 import { useEffect, useState } from "react";
 import request from "umi-request";
 import config from "../../config";
+import Animation from "../components/Animation";
 import Title from "../components/Title";
 
 export default function BangumiView() {
@@ -12,14 +13,14 @@ export default function BangumiView() {
 
     let page = 1
     useEffect(() => {
+        setLoading(true)
         request(`/bili/x/space/bangumi/follow/list?type=1&pn=${page}&ps=15&vmid=${BilibiliUid}`)
             .then((res) => {
                 if (res && res.code == 0) {
                     setBangumis(res.data.list)
                     return
-                } else {
-                    setError(res.message)
                 }
+                setError(res.message)
             }).catch((err) => {
                 setError(err)
             }).finally(() => {
@@ -27,7 +28,7 @@ export default function BangumiView() {
             })
     }, [])
     return (
-        <>
+        <Animation id="bangumi">
             <Title icon={<Film size={30} />} href={`https://space.bilibili.com/${BilibiliUid}`} >Bangumi</Title>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                 {
@@ -36,10 +37,15 @@ export default function BangumiView() {
                     ))
                 }
                 {
-                    loading ? <Skeletons></Skeletons> : error ? <div >{error.message}</div> : !bangumis.length ? <Skeletons></Skeletons> : null
+                    loading ?
+                        <Skeletons></Skeletons> :
+                        error ?
+                            <div >{error.message}</div> :
+                            !bangumis.length ?
+                                <Skeletons></Skeletons> : null
                 }
             </div>
-        </>
+        </Animation>
     )
 }
 

@@ -1,7 +1,7 @@
 {
     "name": "miao-home",
     "private": true,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
@@ -12,6 +12,7 @@
         "@tailwindcss/typography": "^0.5.9",
         "@types/marked": "^4.0.8",
         "autoprefixer": "^10.4.13",
+        "framer-motion": "^10.0.0",
         "http-proxy-middleware": "^2.0.6",
         "localforage": "^1.10.0",
         "lucide-react": "^0.115.0",

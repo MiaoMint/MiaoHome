@@ -6,6 +6,7 @@ import { extractFromXml } from '@extractus/feed-extractor'
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Skeleton from "../components/Skeleton";
+import Animation from "../components/Animation";
 
 
 
@@ -23,7 +24,7 @@ export default function BlogView() {
     }, [])
 
     return (
-        <>
+        <Animation id="blog">
             <Title icon={<Book size={30} />} href={BlogUrl} >Blog</Title>
             {
                 blogs.map((blog, index) => (
@@ -38,7 +39,7 @@ export default function BlogView() {
                     </>
                     : null
             }
-        </>
+        </Animation>
     )
 }
 

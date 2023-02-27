@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import request from "umi-request";
 import { marked } from "marked";
 import Skeleton from "../components/Skeleton";
+import Animation from "../components/Animation";
 
 export default function HomeView() {
   const { Name, Desc, HomeMD, GithubUsername, Avatar } = config;
@@ -29,7 +30,7 @@ export default function HomeView() {
   }, [])
 
   return (
-    <div>
+    <Animation id="home">
       <div className="flex flex-col justify-between items-center mb-10 p-4">
         <img src={Avatar} title={Name} className="h-32 w-32 rounded-full ring-2 ring-slate-400 mb-3" />
         <div className="text-center mt-4 md:mt-0  flex flex-col w-3/4 md:w-1/2">
@@ -54,7 +55,7 @@ export default function HomeView() {
               dangerouslySetInnerHTML={{ __html: introduce }} />
           : null
       }
-    </div>
+    </Animation>
   )
 }
 

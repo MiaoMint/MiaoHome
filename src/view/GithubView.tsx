@@ -5,6 +5,7 @@ import { HTMLProps, useEffect, useState } from "react";
 import request from "umi-request";
 import Title from "../components/Title";
 import Skeleton from "../components/Skeleton";
+import Animation from "../components/Animation";
 
 export default function GithubView() {
   const { GithubUsername } = config
@@ -20,7 +21,7 @@ export default function GithubView() {
   }, [])
 
   return (
-    <>
+    <Animation id="github">
       <Title icon={<Github size={30} />} href={`https://github.com/${GithubUsername}`} >Github</Title>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {
@@ -35,7 +36,7 @@ export default function GithubView() {
             </>
         }
       </div>
-    </>
+    </Animation>
   )
 }
 

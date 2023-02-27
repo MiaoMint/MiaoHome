@@ -1,5 +1,6 @@
 import { Route, Routes, Link, useLocation, Outlet } from "react-router-dom";
 import { Home, Github, Book, Film } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import BangumiView from "./view/BangumiView";
 import BlogView from "./view/BlogView";
 import GithubView from "./view/GithubView";
@@ -9,12 +10,14 @@ export default function App() {
   return (
     <>
       <div className="p-3 md:w-3/5 m-auto pt-40 pb-40">
-        <Routes>
-          <Route path="/" element={<HomeView />}></Route>
-          <Route path="/github" element={<GithubView />}></Route>
-          <Route path="/blog" element={<BlogView />}></Route>
-          <Route path="/bangumi" element={<BangumiView />}></Route>
-        </Routes>
+        <AnimatePresence>
+          <Routes>
+            <Route path="/" element={<HomeView />}></Route>
+            <Route path="/github" element={<GithubView />}></Route>
+            <Route path="/blog" element={<BlogView />}></Route>
+            <Route path="/bangumi" element={<BangumiView />}></Route>
+          </Routes>
+        </AnimatePresence>
       </div>
       <Nav />
     </>
