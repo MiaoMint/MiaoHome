@@ -10,14 +10,12 @@ export default function App() {
   return (
     <>
       <div className="p-3 md:w-3/5 m-auto pt-40 pb-40">
-        <AnimatePresence>
-          <Routes>
-            <Route path="/" element={<HomeView />}></Route>
-            <Route path="/github" element={<GithubView />}></Route>
-            <Route path="/blog" element={<BlogView />}></Route>
-            <Route path="/bangumi" element={<BangumiView />}></Route>
-          </Routes>
-        </AnimatePresence>
+        <Routes>
+          <Route path="/" element={<HomeView />}></Route>
+          <Route path="/github" element={<GithubView />}></Route>
+          <Route path="/blog" element={<BlogView />}></Route>
+          <Route path="/bangumi" element={<BangumiView />}></Route>
+        </Routes>
       </div>
       <Nav />
     </>
@@ -40,9 +38,9 @@ function Nav() {
           <li key={index}
             className={
               `h-20 w-20 m-2 rounded-2xl hover:bg-slate-200 transition-all ${location.pathname === link.to ? "bg-slate-200" : ""}`}>
-            <Link to={link.to} className="flex h-full flex-col justify-center items-center transition-all overflow-hidden">
-              <link.icon className="mb-2" />
-              <span>{link.text}</span>
+            <Link to={link.to} className=" h-full flex flex-col justify-center items-center transition-all">
+              <link.icon className={`transition-all ${location.pathname === link.to ? "" : " h-96"}`} />
+              <span className="mt-1 overflow-hidden">{link.text}</span>
             </Link>
           </li>
         ))}
