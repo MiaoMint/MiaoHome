@@ -39,8 +39,8 @@ function Nav() {
             className={
               `h-20 w-20 m-2 rounded-2xl hover:bg-slate-200 transition-all ${location.pathname === link.to ? "bg-slate-200" : ""}`}>
             <Link to={link.to} className=" h-full flex flex-col justify-center items-center transition-all">
-              <link.icon className={`transition-all ${location.pathname === link.to ? "" : " h-96"}`} />
-              <span className="mt-1 overflow-hidden">{link.text}</span>
+              <link.icon className={`transition-all m-1 ${location.pathname === link.to ? "" : " h-96"}`} />
+              <span className=" overflow-hidden">{link.text}</span>
             </Link>
           </li>
         ))}
