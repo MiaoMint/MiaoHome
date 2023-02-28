@@ -12,12 +12,12 @@ export default function BangumiView() {
     const [error, setError] = useState<Error>()
 
     let page = 1
-    useEffect(() => {
+    const getBangumi = () => {
         setLoading(true)
         request(`/bili/x/space/bangumi/follow/list?type=1&pn=${page}&ps=15&vmid=${BilibiliUid}`)
             .then((res) => {
                 if (res && res.code == 0) {
-                    setBangumis(res.data.list)
+                    setBangumis((lists) => { return [...lists, ...res.data.list] })
                     return
                 }
                 setError(res.message)
@@ -26,6 +26,23 @@ export default function BangumiView() {
             }).finally(() => {
                 setLoading(false)
             })
+    }
+
+    useEffect(() => {
+        getBangumi()
+        // 注册滚动事件
+        document.addEventListener('scroll', () => {
+            const clientHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+            // 滚动条距离顶部的距离
+            if (clientHeight - 20 < window.scrollY) {
+                page++
+                getBangumi()
+            }
+        })
+
+        return () => {
+            document.removeEventListener('scroll', () => { })
+        }
     }, [])
     return (
         <Animation id="bangumi">
