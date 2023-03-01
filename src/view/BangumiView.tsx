@@ -79,7 +79,7 @@ function BangumiCard(props: BangumiCardProps) {
             <img
                 src={props.cover}
                 alt={props.title}
-                className="mb-2 rounded-xl hover:ring-4 hover:ring-slate-400 transition-all"
+                className="mb-2 rounded-xl hover:ring-4 hover:ring-slate-400 w-full transition-all"
                 referrerPolicy="no-referrer" />
             <h2 className="break-all flex items-center mb-3"> {props.title} </h2>
         </a>
