@@ -54,7 +54,7 @@ function BlogCard(props: BlogProps) {
         <Card className="mb-3 md:hover:scale-105 transition-all">
             <a href={props.link} target="_blank" title={props.title}>
                 <h2 className="text-lg font-bold break-all flex items-center mb-3"> {props.title} </h2>
-                <p className="text-gray-500 text-sm mb-3"> {props.description} </p>
+                <p className="text-gray-500 text-sm mb-3 break-all"> {props.description} </p>
                 <p className="text-gray-500 text-sm mb-3"> {props.published.substring(0, 10)} </p>
             </a>
         </Card>
