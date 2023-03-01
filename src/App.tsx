@@ -5,8 +5,21 @@ import BangumiView from "./view/BangumiView";
 import BlogView from "./view/BlogView";
 import GithubView from "./view/GithubView";
 import HomeView from "./view/HomeView";
+import { useEffect } from "react";
 
 export default function App() {
+  const location = useLocation()
+
+  // 切换页面自动滚动到顶部
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      })
+    }, 100);
+  }, [location])
+
   return (
     <>
       <div className="p-3 md:w-3/5 m-auto pt-40 pb-40">
