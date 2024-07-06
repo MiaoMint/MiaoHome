@@ -14,7 +14,8 @@ export default function GithubView() {
   useEffect(() => {
     request.get(`https://api.github.com/users/${GithubUsername}/repos?sort=updated`)
       .then((res: GithubCardProps[]) => {
-        setRepos(res)
+        const filteredRepos = res.filter(repo => repo.name !== GithubUsername);
+        setRepos(filteredRepos)
       }).catch((err) => {
         setError(err)
       })
